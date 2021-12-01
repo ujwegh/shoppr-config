@@ -1,0 +1,29 @@
+logging:
+  config: notifications/config/logback.groovy
+
+server:
+  port: 8102
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: notifications
+  cloud:
+    config:
+      enabled: false
+  zipkin:
+    enabled: false
+
+webClient:
+  loadBalanced:
+    acquireTimeout: 100
+    maxConnections: 100
+    isKeepAlive: false
+
+products:
+  service:
+    url: http://products
