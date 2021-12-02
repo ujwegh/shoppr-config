@@ -1,26 +1,25 @@
-logging:
-  config: notifications/config/logback.groovy
-
 server:
-  port: 8102
+  name:
+    full: ${NAMESPACE_FULL}
+    short: ${NAMESPACE_SHORT}
+  port: 8080
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery-service:8080/eureka
 
 spring:
   application:
     name: notifications
-  cloud:
-    config:
-      enabled: false
   zipkin:
     enabled: false
 
 webClient:
   loadBalanced:
-    acquireTimeout: 100
+    maxConnections: 100
+    isKeepAlive: false
+  default:
     maxConnections: 100
     isKeepAlive: false
 
