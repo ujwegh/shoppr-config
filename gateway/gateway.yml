@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8080/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: gateway
+  zipkin:
+    enabled: false
+
+webClient:
+  loadBalanced:
+    maxConnections: 100
+    isKeepAlive: false
+  default:
+    maxConnections: 100
+    isKeepAlive: false

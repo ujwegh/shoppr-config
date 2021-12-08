@@ -1,0 +1,24 @@
+server:
+  name:
+    full: ${NAMESPACE_FULL}
+    short: ${NAMESPACE_SHORT}
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8080/eureka
+
+spring:
+  application:
+    name: products
+  zipkin:
+    enabled: false
+
+webClient:
+  loadBalanced:
+    maxConnections: 100
+    isKeepAlive: false
+  default:
+    maxConnections: 100
+    isKeepAlive: false

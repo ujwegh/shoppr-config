@@ -4,7 +4,7 @@ import ch.qos.logback.classic.filter.ThresholdFilter
 import de.siegmar.logbackgelf.GelfEncoder
 import de.siegmar.logbackgelf.GelfUdpAppender
 
-def SERVICE_NAME = "DISCOVERY-SERVICE"
+def SERVICE_NAME = "NOTIFICATIONS"
 def LOG_PATH = "${System.getenv('LOGGING_PATH')}"
 def NAMESPACE = "${System.getenv('NAMESPACE_FULL')}"
 def FILE_NAME = "spring.log"
